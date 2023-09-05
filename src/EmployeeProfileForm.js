@@ -30,7 +30,7 @@ const submitting=async(e)=>{
     return(
         <div>
           <br></br>
-        <h2>Create employee Profile</h2>
+        <h4>Create employee Profile</h4>
         <br></br>
         <body  class="grid gap-3">
         <form class="row g-3">

@@ -1,10 +1,15 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import {useNavigate } from "react-router-dom";
 
 function GetAllEmployees(){
 
   const[employees, getEmployees]=useState([]);
- 
+  const navigate=useNavigate();
+
+  const renderFileUpload=()=>{
+    navigate("/fileUpload");
+  }
 
   const getAllEmployees=async()=>{
     const result=await axios.get(`http://localhost:8080/employeeProfile/getAllEmployees`)
@@ -81,7 +86,7 @@ function GetAllEmployees(){
               </td>
               <td>
 
-                <button className="btn btn-primary">Add Documents</button>
+                <button onClick={renderFileUpload} className="btn btn-primary">Add Documents</button>
 
               </td>
 
@@ -92,7 +97,8 @@ function GetAllEmployees(){
         </tbody>
 
       </table>
-
+      
+      
     </div>
     );
 };
