@@ -7,8 +7,8 @@ function GetAllEmployees(){
   const[employees, getEmployees]=useState([]);
   const navigate=useNavigate();
 
-  const renderFileUpload=()=>{
-    navigate("/fileUpload");
+  const renderFileUpload=(employeeId)=>{
+    navigate(`/fileUpload/${employeeId}`);
   }
 
   const getAllEmployees=async()=>{
@@ -65,7 +65,6 @@ function GetAllEmployees(){
           {employees.map((employee) => (
 
             <tr key={employee.id}>
-
               <td>{employee.firstname}</td>
               <td>{employee.middlename}</td>
               <td>{employee.lastname}</td>
@@ -86,7 +85,7 @@ function GetAllEmployees(){
               </td>
               <td>
 
-                <button onClick={renderFileUpload} className="btn btn-primary">Add Documents</button>
+                <button onClick={()=>renderFileUpload(employee.id)} className="btn btn-primary">Add Documents</button>
 
               </td>
 

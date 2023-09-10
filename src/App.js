@@ -43,7 +43,7 @@ function App() {
         <Route path="" element={<GetAllEmployees />}></Route>
         <Route path="/EmployeeProfileForm" element={<EmployeeProfileForm />}></Route>
         <Route path='/GetAllEmployees' element={<GetAllEmployees />}></Route>
-        <Route path='/fileUpload' element={<FileUpload />} />
+        <Route path='/fileUpload/:employeeId' element={<FileUpload />} />
       </Routes>
 
     </Router>
